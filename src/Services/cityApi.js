@@ -3,7 +3,7 @@ export const searchCities = async (keyword, accessToken = null) => {
 
   try {
     const response = await fetch(
-      `/api/v1/reference-data/locations?keyword=${encodeURIComponent(keyword)}&subType=CITY,AIRPORT&limit=10`,
+      `https://flight-search-eng.netlify.app/api/v1/reference-data/locations?keyword=${encodeURIComponent(keyword)}&subType=CITY,AIRPORT&limit=10`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
