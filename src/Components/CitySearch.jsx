@@ -33,7 +33,7 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
       });
 
       const response = await fetch(
-        `https://test.api.amadeus.com/api/v1/reference-data/locations?${params.toString()}`,
+        `/api/v1/reference-data/locations?${params.toString()}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

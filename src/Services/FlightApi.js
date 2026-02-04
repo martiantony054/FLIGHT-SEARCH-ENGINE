@@ -117,7 +117,7 @@ export const searchCities = async (query, token) => {
       "page[limit]": "30",
     });
 
-    const url = `https://test.api.amadeus.com/api/v1/reference-data/locations?${params.toString()}`;
+    const url = `/api/v1/reference-data/locations?${params.toString()}`;
 
     console.log(`Fetching: ${url}`);
 

@@ -15,7 +15,7 @@ export const getAccessToken = async () => {
   }
 
   try {
-    const response = await fetch("https://test.api.amadeus.com/api/v1/security/oauth2/token", {
+    const response = await fetch("/api/v1/security/oauth2/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
