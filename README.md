@@ -1,16 +1,73 @@
-# React + Vite
+# ✈️ Flight Search & Booking UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern flight search and review application built with **React**, **Amadeus Flight Offers API**, and a clean UI inspired by **MakeMyTrip / Ixigo**.  
+The application supports **one-way and round-trip searches**, detailed **layover timelines**, and a structured **flight review flow**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 🔍 Flight search with origin & destination
+- 🧭 One-way and round-trip trip types
+- 📅 Departure & return date selection
+- 👥 Adult & child traveler handling
+- ✈️ Flight cards with airline, duration, stops, and price
+- 📍 Timeline-based layover visualization
+- 💰 Fare breakup (base + taxes)
+- 🎨 Responsive UI with animations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React (Vite)
+- **Styling**: Tailwind CSS + MUI
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **API**: Amadeus Flight Offers API
+
+---
+
+## 📁 Project Structure
+
+src/
+│
+├── api/
+│ └── FlightApi.js
+  └── cityApi.js
+  └── AuthService.js
+   
+│
+├── components/
+│ ├── SearchForm.jsx
+│ ├── FlightCard.jsx
+│ ├── FlightReview.jsx
+│ └── CitySearch.jsx
+  └── FlightSearch.jsx
+  └── Footer.jsx
+  └── Navbar.jsx
+  └── PriceGraph.jsx
+│
+├── utils/
+│ └── DateUtils.js
+│
+└── App.jsx
+
+
+---
+
+## ⚙️ Environment Setup
+
+Create a `.env` file:
+
+VITE_AMADEUS_API_KEY=your_api_key
+VITE_AMADEUS_API_SECRET=your_api_secret
+
+> A proxy is used during development to avoid CORS issues.
+
+---
+
+## ▶️ Run the Project
+
+npm install
+npm run dev
