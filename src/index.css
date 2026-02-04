@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.input {
+  @apply border p-2 rounded w-full;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white rounded p-2 hover:bg-blue-700;
+}
