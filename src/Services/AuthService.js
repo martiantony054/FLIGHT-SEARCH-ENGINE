@@ -8,10 +8,10 @@ export const getAccessToken = async () => {
   }
 
   try {
-    const response = await fetch("/api/v1/security/oauth2/token", {
+    const response = await fetch("/v1/security/oauth2/token", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
         grant_type: "client_credentials",
