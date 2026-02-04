@@ -38,7 +38,7 @@ export const searchFlights = async (searchParams) => {
   if (returnDate) params.append("returnDate", returnDate);
 
   const response = await fetch(
-    `https://flight-search-eng.netlify.app/api/v2/shopping/flight-offers?${params.toString()}`,
+    `https://test.api.amadeus.com/api/v2/shopping/flight-offers?${params.toString()}`,
     {
       headers: { Authorization: `Bearer ${token}` },
     },
@@ -117,7 +117,7 @@ export const searchCities = async (query, token) => {
       "page[limit]": "30",
     });
 
-    const url = `https://flight-search-eng.netlify.app/api/v1/reference-data/locations?${params.toString()}`;
+    const url = `https://test.api.amadeus.com/api/v1/reference-data/locations?${params.toString()}`;
 
     console.log(`Fetching: ${url}`);
 
