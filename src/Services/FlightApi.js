@@ -38,7 +38,7 @@ export const searchFlights = async (searchParams) => {
   if (returnDate) params.append("returnDate", returnDate);
 
   const response = await fetch(
-    `https://test.api.amadeus.com/api/v2/shopping/flight-offers?${params.toString()}`,
+    `/api/v2/shopping/flight-offers?${params.toString()}`,
     {
       headers: { Authorization: `Bearer ${token}` },
     },
