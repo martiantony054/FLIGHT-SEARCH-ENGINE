@@ -32,7 +32,7 @@ The application supports **one-way and round-trip searches**, detailed **layover
 
 src/
 │
-├── api/
+├── services/
 │ └── FlightApi.js
   └── cityApi.js
   └── AuthService.js
