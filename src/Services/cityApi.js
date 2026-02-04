@@ -3,7 +3,7 @@ export const searchCities = async (keyword, accessToken = null) => {
 
   try {
     const response = await fetch(
-      `/api/v1/reference-data/locations?keyword=${encodeURIComponent(keyword)}&subType=CITY,AIRPORT&limit=10`,
+      `/api/search-cities?keyword=${encodeURIComponent(keyword)}&subType=CITY,AIRPORT&limit=10`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,

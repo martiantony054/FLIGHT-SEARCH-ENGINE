@@ -38,7 +38,7 @@ export const searchFlights = async (searchParams) => {
   if (returnDate) params.append("returnDate", returnDate);
 
   const response = await fetch(
-    `/api/v2/shopping/flight-offers?${params.toString()}`,
+    `/api/search-flights?${params.toString()}`,
     {
       headers: { Authorization: `Bearer ${token}` },
     },
@@ -117,7 +117,7 @@ export const searchCities = async (query, token) => {
       "page[limit]": "30",
     });
 
-    const url = `/api/v1/reference-data/locations?${params.toString()}`;
+    const url = `/api/search-cities?${params.toString()}`;
 
     console.log(`Fetching: ${url}`);
 
