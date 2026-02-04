@@ -11,7 +11,7 @@ export const getAccessToken = async () => {
     const response = await fetch("/api/v1/security/oauth2/token", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
       body: new URLSearchParams({
         grant_type: "client_credentials",
