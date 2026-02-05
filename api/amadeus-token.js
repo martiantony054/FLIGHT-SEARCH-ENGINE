@@ -9,7 +9,9 @@ export default async function handler(req, res) {
         client_id: process.env.AMADEUS_CLIENT_ID,
         client_secret: process.env.AMADEUS_CLIENT_SECRET,
       }),
+      
     }
+    
   );
 
   const data = await response.json();
