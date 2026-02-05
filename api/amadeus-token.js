@@ -6,7 +6,7 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
         grant_type: "client_credentials",
-        client_id: process.env.AMADEUS_CLIENT_ID,
+        client_id: process.env.AMADEUS_CLIENT_ID,  
         client_secret: process.env.AMADEUS_CLIENT_SECRET,
       }),
       
