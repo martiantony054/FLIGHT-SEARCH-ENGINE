@@ -14,7 +14,7 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
     setQuery(value);
   }, [value]);
   const fetchCities = async (searchTerm) => {
-    const keyword = searchTerm?.trim(); 
+    const keyword = searchTerm?.trim();
 
     if (!keyword || keyword.length < 2) {
       setSuggestions([]);
@@ -29,7 +29,7 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
       const params = new URLSearchParams({
         keyword,
         subType: "CITY,AIRPORT",
-        "page[limit]": "10", 
+        "page[limit]": "10",
       });
 
       const response = await fetch(
@@ -49,6 +49,8 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
       }
 
       const data = await response.json();
+
+      console.log("City API raw response:", data);
 
       const cities =
         data.data?.map((item) => ({
