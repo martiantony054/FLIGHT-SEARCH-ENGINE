@@ -30,7 +30,7 @@
 // };
 
 export const getAccessToken = async () => {
-  const response = await fetch("/api/auth");
+  const response = await fetch("/api/amadeus-token");
 
   if (!response.ok) {
     throw new Error("Failed to fetch access token");
