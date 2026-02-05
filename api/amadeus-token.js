@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+export default async function handler(res) {
   const response = await fetch(
     "https://api.amadeus.com/v1/security/oauth2/token",
     {
