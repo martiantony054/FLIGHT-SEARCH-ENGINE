@@ -1,4 +1,3 @@
-import { getAccessToken } from "./AuthService";
 
 const getIataCode = (locationString) => {
   if (!locationString) return "";
@@ -23,7 +22,6 @@ export const searchFlights = async (searchParams) => {
     throw new Error("Invalid origin or destination");
   }
 
-  const token = await getAccessToken();
 
   const params = new URLSearchParams({
     originLocationCode: originCode,
@@ -38,11 +36,7 @@ export const searchFlights = async (searchParams) => {
   if (returnDate) params.append("returnDate", returnDate);
 
   const response = await fetch(
-    `/api/v2/shopping/flight-offers?${params.toString()}`,
-    {
-      headers: { Authorization: `Bearer ${token}` },
-    },
-  );
+    `/api/flights?${params.toString()}`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch flights");
@@ -107,7 +101,7 @@ export const sortFlights = (flights, sortBy) => {
       return sortedFlights;
   }
 };
-export const searchCities = async (query, token) => {
+export const searchCities = async (query) => {
   if (!query || query.length < 2) return [];
 
   try {
@@ -117,18 +111,11 @@ export const searchCities = async (query, token) => {
       "page[limit]": "30",
     });
 
-    const url = `/api/v1/reference-data/locations?${params.toString()}`;
+    const url = `/api/cities?${params.toString()}`;
 
     console.log(`Fetching: ${url}`);
 
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-
-        Accept: "application/vnd.amadeus+json",
-      },
-    });
+    const response = await fetch(url); 
 
     if (!response.ok) {
       const errorText = await response.text();

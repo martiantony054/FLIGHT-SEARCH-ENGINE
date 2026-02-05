@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { MapPin, X, Loader2 } from "lucide-react";
-import { getAccessToken } from "../Services/AuthService";
+// import { getAccessToken } from "../Services/AuthService";
 
 function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
   const [query, setQuery] = useState(value || "");
@@ -24,7 +24,7 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
     setIsLoading(true);
 
     try {
-      const token = await getAccessToken();
+      // const token = await getAccessToken();
 
       const params = new URLSearchParams({
         keyword,
@@ -33,13 +33,13 @@ function CitySearch({ label, value, onChange, placeholder, excludeCity }) {
       });
 
       const response = await fetch(
-        `/api/v1/reference-data/locations?${params.toString()}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.amadeus+json",
-          },
-        },
+        `/api/cities?${params.toString()}`,
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //     Accept: "application/vnd.amadeus+json",
+        //   },
+        // },
       );
 
       if (!response.ok) {
