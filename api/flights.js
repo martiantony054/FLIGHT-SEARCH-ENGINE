@@ -1,6 +1,5 @@
 export default async function handler(req, res) {
   try {
-    // 1️⃣ Get access token (TEST environment)
     const tokenRes = await fetch(
       "https://test.api.amadeus.com/v1/security/oauth2/token",
       {
@@ -21,10 +20,8 @@ export default async function handler(req, res) {
 
     const tokenData = await tokenRes.json();
 
-    // 2️⃣ Convert query object → query string
     const params = new URLSearchParams(req.query).toString();
 
-    // 3️⃣ Call Amadeus Flights API (TEST environment)
     const response = await fetch(
       `https://test.api.amadeus.com/v2/shopping/flight-offers?${params}`,
       {
