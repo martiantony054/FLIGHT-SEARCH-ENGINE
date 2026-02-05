@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const { keyword } = req.query;
 
   const tokenRes = await fetch(
-    "https://api.amadeus.com/v1/security/oauth2/token",
+    "https://test.api.amadeus.com/v1/security/oauth2/token",
     {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   });
 
   const response = await fetch(
-    `https://api.amadeus.com/v1/reference-data/locations?${params}`,
+    `https://test.api.amadeus.com/v1/reference-data/locations?${params}`,
     {
       headers: {
         Authorization: `Bearer ${tokenData.access_token}`,
